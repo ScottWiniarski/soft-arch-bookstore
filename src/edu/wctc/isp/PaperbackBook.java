@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class PaperbackBook implements Product {
+public class PaperbackBook implements BookProduct {
 
     private String title;
     private String isbn;
@@ -24,10 +24,7 @@ public class PaperbackBook implements Product {
         this.pageCount = pageCount;
     }
 
-    @Override
-    public String getArtist() {
-        return "";
-    }
+
 
     @Override
     public String getAuthor() {
@@ -52,11 +49,6 @@ public class PaperbackBook implements Product {
     @Override
     public int getPages() {
         return pageCount;
-    }
-
-    @Override
-    public Duration getPlayingTime() {
-        return null;
     }
 
     @Override
