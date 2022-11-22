@@ -1,15 +1,18 @@
 package edu.wctc.isp;
 
+import edu.wctc.isp.solution.part2.Product;
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("Original Program");
-        UniversalProduct List = (UniversalProduct) new ArrayList<UniversalProduct>();
+        List<UniversalProduct> products = new ArrayList<>();
 
         BookProduct book1 = new HardcoverBook("The Hunger Games", "9780439023528",
                 8.79, 12,
@@ -24,10 +27,19 @@ public class Main {
                 LocalDate.of(2011, Month.APRIL, 12),
                 "Miles Davis", Duration.ofMinutes(46));
 
-        System.out.println(book1.toString());
+        products.add(book1);
+        products.add(book2);
+        products.add(record);
+
+        for (UniversalProduct product : products) {
+            System.out.println(product.toString());
+            System.out.println("\n");
+        }
+
+        /*System.out.println(book1.toString());
         System.out.println("\n");
         System.out.println(book2.toString());
         System.out.println("\n");
-        System.out.println(record.toString());
+        System.out.println(record.toString());*/
     }
 }
